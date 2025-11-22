@@ -1,18 +1,44 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  // In Tailwind v4, most configuration is done via CSS @theme blocks
-  // This config file is optional and mainly used for:
-  // - Content paths (if you need to specify custom paths)
-  // - Plugins
-  // - Other JS-based configuration
+  // Tailwind CSS v4 uses a zero-config approach
+  // Most configuration is done via CSS @theme blocks in globals.css
+  // This config file is optional and mainly used for content paths and plugins
   
   content: [
-    './app/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx,mdx}',
     './components/**/*.{js,jsx,ts,tsx}',
     './lib/**/*.{js,jsx,ts,tsx}',
   ],
-  
-  // Note: In v4, theme customization is done in CSS with @theme blocks
-  // See your globals.css for theme configuration
+  theme: {
+    extend: {
+      container: {
+        center: true,
+        padding: "15px"
+      },
+      screens: {
+        xs: "480px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
+      fontFamily:{
+        primary : ["var(--font-dm-sans)", "sans-serif"],
+        secondary : ["var(--font-barlow)", "sans-serif"],
+      },
+      colors: {
+        primary: "#121315",
+        secondary: "#666666",
+        accent: "#ffca3b",
+        border: "#d7d7d7",
+      },
+      boxShadow: {
+        custom: "0px 4px 54px 10px rgba(18,19,21,0.06)"
+      },
+      backgroundImage: {
+        hero: "url('/assets/img/hero/bg.jpg')",
+      }
+    }
+  }
 }
-
