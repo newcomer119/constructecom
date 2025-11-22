@@ -40,7 +40,7 @@ const NavMobile = () => {
       </SheetTrigger>
       <SheetContent className="bg-primary border-none text-white flex flex-col">
         <SheetHeader>
-          <SheetTitle className="text-left">
+          <SheetTitle className="text-center">
             <Logo />
           </SheetTitle>
           <SheetDescription className="sr-only">
@@ -48,7 +48,7 @@ const NavMobile = () => {
           </SheetDescription>
         </SheetHeader>
 
-        <nav className="flex flex-col gap-4 mt-8">
+        <nav className="flex flex-col gap-4 mt-8 items-center">
           {links.map((link, index) => (
             <SheetClose key={index} asChild>
               <ScrollLink
@@ -56,7 +56,7 @@ const NavMobile = () => {
                 smooth
                 spy
                 onClick={handleLinkClick}
-                className="text-white hover:text-accent transition-colors cursor-pointer text-lg font-medium py-2"
+                className="text-white hover:text-accent transition-colors cursor-pointer text-lg font-medium py-2 text-center"
                 activeClass="text-accent"
               >
                 {link.name}
@@ -65,11 +65,13 @@ const NavMobile = () => {
           ))}
         </nav>
 
-        <div className="mt-auto pt-8">
-          <Socials
-            containerStyles="flex items-center gap-4"
-            iconStyles="text-white hover:text-accent transition-colors text-2xl"
-          />
+        <div className="mt-auto pt-8 border-t border-white/20">
+          <div className="flex flex-col items-center gap-4 pt-6">
+            <Socials
+              containerStyles="flex items-center justify-center gap-4"
+              iconStyles="text-white hover:text-accent transition-colors text-2xl"
+            />
+          </div>
         </div>
       </SheetContent>
     </Sheet>
