@@ -9,6 +9,7 @@ import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import React from "react";
+import Work from "@/components/Work";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <About />
       <Stats />
       <Services />
+      <Work/>
       <Testimonial />
       <Faq />
       <Contact />
