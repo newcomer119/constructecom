@@ -14,19 +14,27 @@ import Logo from "./Logo";
 import Socials from "./Socials";
 import { Link as ScrollLink } from "react-scroll";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const links = [
-  { name: "Home", path: "home" },
-  { name: "About", path: "about" },
-  { name: "Services", path: "services" },
-  { name: "Projects", path: "projects" },
-  { name: "Contact", path: "contact" },
+  { name: "Home", path: "home", type: "scroll" },
+  { name: "About", path: "about", type: "scroll" },
+  { name: "Services", path: "services", type: "scroll" },
+  { name: "Products", path: "/products", type: "route" },
+  { name: "Projects", path: "projects", type: "scroll" },
+  { name: "Contact", path: "contact", type: "scroll" },
 ];
 
 const NavMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
-  const handleLinkClick = () => {
+  const handleRouteClick = (path) => {
+    router.push(path);
+    setIsOpen(false);
+  };
+
+  const handleScrollClick = () => {
     setIsOpen(false);
   };
 
@@ -49,20 +57,31 @@ const NavMobile = () => {
         </SheetHeader>
 
         <nav className="flex flex-col gap-4 mt-8 items-center">
-          {links.map((link, index) => (
-            <SheetClose key={index} asChild>
-              <ScrollLink
-                to={link.path}
-                smooth
-                spy
-                onClick={handleLinkClick}
+          {links.map((link) =>
+            link.type === "scroll" ? (
+              <SheetClose key={link.name} asChild>
+                <ScrollLink
+                  to={link.path}
+                  smooth
+                  spy
+                  onClick={handleScrollClick}
+                  className="text-white hover:text-accent transition-colors cursor-pointer text-lg font-medium py-2 text-center"
+                  activeClass="text-accent"
+                >
+                  {link.name}
+                </ScrollLink>
+              </SheetClose>
+            ) : (
+              <button
+                key={link.name}
+                type="button"
+                onClick={() => handleRouteClick(link.path)}
                 className="text-white hover:text-accent transition-colors cursor-pointer text-lg font-medium py-2 text-center"
-                activeClass="text-accent"
               >
                 {link.name}
-              </ScrollLink>
-            </SheetClose>
-          ))}
+              </button>
+            )
+          )}
         </nav>
 
         <div className="mt-auto pt-8 border-t border-white/20">

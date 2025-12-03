@@ -139,13 +139,43 @@ const Services = () => {
   return (
     <section className="pt-16 xl:pt-32" id="services">
       <div className="container mx-auto">
-        <div className="text-center max-w-[540px] mx-auto mb-12 xl:mb-16">
-          <Pretitle text="Our Services" center/>
-          <h2 className="h2 mb-3">Solutions We Provide</h2>
-          <p className="text-sm xl:text-base mx-auto">
-            Offering tailored construction solutions, from planning to
-            completion, with a focus on Quality and innovation
-          </p>
+        <div className="max-w-[900px] mx-auto mb-12 xl:mb-16">
+          <div className="text-center max-w-[540px] mx-auto">
+            <Pretitle text="Our Services" center />
+            <h2 className="h2 mb-3">Solutions We Provide</h2>
+            <p className="text-sm xl:text-base mx-auto">
+              Offering tailored construction solutions, from planning to
+              completion, with a focus on quality and innovation.
+            </p>
+          </div>
+
+          {/* Products quick access */}
+          <div className="mt-6 flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-4">
+            <p className="text-xs md:text-sm text-muted-foreground">
+              Want to explore our key product categories?
+            </p>
+            <select
+              className="h-11 px-3 rounded-md border border-slate-200 text-xs md:text-sm bg-white outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition w-full max-w-[260px]"
+              defaultValue=""
+              onChange={(e) => {
+                if (!e.target.value) return;
+                if (typeof window !== "undefined") {
+                  window.location.href = e.target.value;
+                }
+              }}
+            >
+              <option value="" disabled>
+                Select a product category
+              </option>
+              <option value="/products?category=tiles">Tiles</option>
+              <option value="/products?category=wooden-flooring">
+                Wooden Flooring
+              </option>
+              <option value="/products?category=vanities">Vanities</option>
+              <option value="/products?category=mirrors">Mirrors</option>
+              <option value="/products?category=faucets">Faucets</option>
+            </select>
+          </div>
         </div>
 
         {/* tabs */}
