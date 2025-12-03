@@ -1,9 +1,20 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Pretitle from "@/components/Pretitle";
 import Button from "@/components/Button";
 import Product3DViewer from "@/components/Product3DViewer";
+import ProductARViewer from "@/components/ProductARViewer";
 
 const ProductsPage = () => {
+  const [arViewOpen, setArViewOpen] = useState(false);
+  const [currentProduct, setCurrentProduct] = useState("");
+
+  const handleViewInAR = (productName) => {
+    setCurrentProduct(productName);
+    setArViewOpen(true);
+  };
+
   return (
     <main className="min-h-screen bg-slate-50 pb-20">
       {/* Hero / intro */}
@@ -114,7 +125,15 @@ const ProductsPage = () => {
                     <p>Modern &amp; minimal bathrooms</p>
                   </div>
                 </div>
-                <Button text="Get a Quote for This Vanity" />
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => handleViewInAR("Siena Wall Vanity")}
+                    className="px-6 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors uppercase tracking-wide text-sm"
+                  >
+                    View in My Room (AR)
+                  </button>
+                  <Button text="Get a Quote" />
+                </div>
               </div>
 
               <div className="h-[360px] md:h-[420px] xl:h-[460px]">
@@ -159,7 +178,15 @@ const ProductsPage = () => {
                     <p>Living rooms &amp; lounges</p>
                   </div>
                 </div>
-                <Button text="Get a Quote for This Sofa" />
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => handleViewInAR("Lounge Sofa")}
+                    className="px-6 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors uppercase tracking-wide text-sm"
+                  >
+                    View in My Room (AR)
+                  </button>
+                  <Button text="Get a Quote" />
+                </div>
               </div>
 
               <div className="h-[360px] md:h-[420px] xl:h-[460px]">
@@ -169,6 +196,13 @@ const ProductsPage = () => {
           </section>
         </div>
       </section>
+
+      {/* AR Viewer Modal */}
+      <ProductARViewer
+        isOpen={arViewOpen}
+        onClose={() => setArViewOpen(false)}
+        productName={currentProduct}
+      />
     </main>
   );
 };
