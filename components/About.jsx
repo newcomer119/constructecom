@@ -32,7 +32,7 @@ const About = () => {
                     width={154}
                     height={38}
                   />
-                  <p className="text-secondary mt-2">Company CEO</p>
+                  <p className="text-secondary mt-2">Founder : Sagar Surya Setia</p>
                 </div>
                 {/* btn */}
                 <Button text="Contact Us" />
