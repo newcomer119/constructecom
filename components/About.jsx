@@ -1,9 +1,9 @@
 import React from "react";
 import Pretitle from "./Pretitle";
 import Image from "next/image";
-import Signature from "@/assets/img/about/signature.svg";
+import Signature from "../public/assets/img/about/signature.svg";
 import Button from "./Button";
-import img from "@/assets/img/about/img.jpg";
+import img from "../public/assets/img/about/img.jpg";
 
 const About = () => {
   return (
