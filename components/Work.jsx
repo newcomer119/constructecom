@@ -54,12 +54,12 @@ const Work = () => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-8 sm:mt-10 px-4 sm:px-0">
         {workData.map((item, index) => {
           return (
             <div
               key={index}
-              className="w-full h-[492px] flex-1 relative overflow-hidden group flex justify-center rounded-3xl"
+              className="w-full h-[320px] sm:h-[400px] lg:h-[492px] flex-1 relative overflow-hidden group flex justify-center rounded-2xl sm:rounded-3xl"
             >
               <Image
                 src={item.img}
@@ -68,25 +68,25 @@ const Work = () => {
                 alt={item.name}
               />
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/40 to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300" />
-              <div className="absolute inset-x-6 bottom-8 text-white space-y-4">
-                <div className="flex items-center justify-between gap-4">
-                  <h3 className="text-xl font-semibold capitalize">
+              <div className="absolute inset-x-4 sm:inset-x-6 bottom-4 sm:bottom-8 text-white space-y-2 sm:space-y-4">
+                <div className="flex items-center justify-between gap-3 sm:gap-4">
+                  <h3 className="text-lg sm:text-xl font-semibold capitalize">
                     {item.name}
                   </h3>
                   <button
                     type="button"
-                    className="w-10 h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center group-hover:bg-white/20 transition-colors"
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/10 border border-white/30 flex items-center justify-center group-hover:bg-white/20 transition-colors flex-shrink-0"
                     aria-label={`View more about ${item.name}`}
                   >
-                    <RiArrowRightUpLine className="text-xl" />
+                    <RiArrowRightUpLine className="text-lg sm:text-xl" />
                   </button>
                 </div>
-                <p className="text-sm text-white/80 leading-relaxed line-clamp-3">
+                <p className="text-xs sm:text-sm text-white/80 leading-relaxed line-clamp-2 sm:line-clamp-3">
                   {item.description}
                 </p>
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <RiCheckboxCircleFill className="text-emerald-400" />
-                  <span>Quality–driven project delivery</span>
+                <div className="flex items-center gap-2 text-xs sm:text-sm font-medium">
+                  <RiCheckboxCircleFill className="text-emerald-400 text-sm sm:text-base" />
+                  <span className="line-clamp-1">Quality–driven project delivery</span>
                 </div>
               </div>
             </div>

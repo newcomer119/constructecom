@@ -136,13 +136,13 @@ const serviceData = [
 const Services = () => {
   const [activeTab, setActiveTab] = useState("construction");
   return (
-    <section className="pt-16 xl:pt-32" id="services">
+    <section className="pt-12 sm:pt-16 xl:pt-32 px-4 sm:px-0" id="services">
       <div className="container mx-auto">
-        <div className="max-w-[900px] mx-auto mb-12 xl:mb-16">
+        <div className="max-w-[900px] mx-auto mb-8 sm:mb-12 xl:mb-16">
           <div className="text-center max-w-[540px] mx-auto">
             <Pretitle text="Our Services" center />
-            <h2 className="h2 mb-3">Solutions We Provide</h2>
-            <p className="text-sm xl:text-base mx-auto">
+            <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold mb-3">Solutions We Provide</h2>
+            <p className="text-sm sm:text-base xl:text-base mx-auto px-4 sm:px-0">
               Offering tailored construction solutions, from planning to
               completion, with a focus on quality and innovation.
             </p>
@@ -155,18 +155,18 @@ const Services = () => {
           className="w-full"
           onValueChange={(value) => setActiveTab(value)}
         >
-          <div className="flex flex-col xl:flex-row gap-6 xl:gap-[30px]">
+          <div className="flex flex-col xl:flex-row gap-6 sm:gap-8 xl:gap-[30px]">
             {/* Tab List */}
-            <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 xl:gap-6 w-full xl:flex-1 rounded-none p-4 xl:p-6 bg-transparent">
+            <TabsList className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-4 sm:gap-5 xl:gap-6 w-full xl:flex-1 rounded-none p-0 bg-transparent">
               {serviceData.map((item) => {
                 return (
                   <TabsTrigger
                     key={item.name}
                     value={item.name}
-                    className="rounded-none h-[100px] flex items-center relative shadow-custom p-6 xl:p-8 outline-none pl-[120px] pr-4 text-center overflow-visible"
+                    className="rounded-lg md:rounded-none h-auto min-h-[70px] sm:min-h-[85px] md:h-[90px] xl:h-[100px] flex items-center relative shadow-custom p-3 sm:p-4 md:p-6 xl:p-8 outline-none pl-[70px] sm:pl-[85px] md:pl-[100px] xl:pl-[120px] pr-3 sm:pr-4 text-left md:text-center overflow-visible hover:shadow-lg transition-shadow"
                   >
                     <div
-                      className={`w-[100px] h-[100px] flex items-center justify-center absolute left-0 top-0 text-3xl ${
+                      className={`w-[60px] h-[60px] sm:w-[75px] sm:h-[75px] md:w-[90px] md:h-[90px] xl:w-[100px] xl:h-[100px] flex items-center justify-center absolute left-0 top-0 text-xl sm:text-2xl md:text-3xl rounded-l-lg md:rounded-none ${
                         activeTab === item.name
                           ? "bg-primary text-white"
                           : "bg-accent text-primary"
@@ -174,7 +174,7 @@ const Services = () => {
                     >
                       {item.icon}
                     </div>
-                    <div className="uppercase font-primary text-xs xl:text-sm font-semibold tracking-[.6px] ml-4 flex-1 min-w-0 break-words">
+                    <div className="uppercase font-primary text-[11px] sm:text-xs md:text-xs xl:text-sm font-semibold tracking-[.6px] ml-3 sm:ml-4 flex-1 min-w-0 wrap-break-word leading-tight">
                       {item.title}
                     </div>
                   </TabsTrigger>
@@ -183,20 +183,20 @@ const Services = () => {
             </TabsList>
 
             {/* Tabs Content  */}
-            <div className="flex-1 bg-white shadow-custom min-h-[490px] xl:h-[490px] xl:flex-1 p-6 xl:p-[30px]">
+            <div className="flex-1 bg-white shadow-custom rounded-lg md:rounded-none min-h-[300px] sm:min-h-[350px] md:min-h-[400px] xl:h-[490px] xl:flex-1 p-5 sm:p-6 md:p-8 xl:p-[30px]">
               {serviceData.map((item) => (
                 <TabsContent
                   key={item.name}
                   value={item.name}
                   className="h-full mt-0"
                 >
-                  <div className="flex flex-col lg:flex-row gap-6 xl:gap-10 h-full">
-                    {/* Images Section */}
-                    <div className="flex flex-row lg:flex-col gap-3 xl:gap-4 shrink-0">
+                  <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 xl:gap-10 h-full">
+                    {/* Images Section - Hidden on mobile and tablet, visible on desktop */}
+                    <div className="hidden lg:flex flex-col gap-4 shrink-0 justify-start items-start w-auto">
                       {item.thumbs.map((thumb, index) => (
                         <div
                           key={index}
-                          className="relative w-[110px] h-[110px] xl:w-[150px] xl:h-[150px] rounded-md overflow-hidden"
+                          className="relative w-[140px] h-[140px] xl:w-[150px] xl:h-[150px] rounded-lg overflow-hidden shadow-md"
                         >
                           <Image
                             src={thumb.url}
@@ -208,31 +208,18 @@ const Services = () => {
                       ))}
                     </div>
 
-                    {/* Text Content Section */}
-                    <div className="flex-1 flex flex-col">
-                      <h3 className="h3 mb-4 xl:mb-6 capitalize">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm xl:text-base text-muted-foreground mb-6 xl:mb-8 leading-relaxed">
-                        {item.description}
-                      </p>
-
-                      {/* Service List */}
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 xl:gap-4 mb-6 xl:mb-8">
+                    {/* Service List - Hidden on mobile and tablet, visible on desktop */}
+                    <div className="hidden lg:flex flex-1 flex-col">
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 xl:gap-4">
                         {item.servicesList.map((service, index) => (
-                          <li key={index} className="flex items-center gap-3">
-                            <div className="w-[6px] h-[6px] rounded-full bg-primary shrink-0" />
-                            <span className="text-sm xl:text-base font-medium text-primary capitalize">
+                          <li key={index} className="flex items-start gap-2 sm:gap-3">
+                            <div className="w-[6px] h-[6px] rounded-full bg-primary shrink-0 mt-2" />
+                            <span className="text-sm sm:text-base xl:text-base font-medium text-primary capitalize leading-relaxed">
                               {service}
                             </span>
                           </li>
                         ))}
                       </ul>
-
-                      {/* Button */}
-                      <div className="mt-auto">
-                        <Button text="Read More" />
-                      </div>
                     </div>
                   </div>
                 </TabsContent>

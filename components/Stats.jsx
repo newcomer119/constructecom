@@ -32,13 +32,13 @@ const Stats = () => {
   const inView = useInView(ref, { treshold: 0.5 });
 
   return (
-    <div ref={ref} className="mt-16 xl:mt-32 bg-primary py-10 w-full">
+    <div ref={ref} className="mt-12 sm:mt-16 xl:mt-32 bg-primary py-8 sm:py-10 w-full px-4 sm:px-0">
       <div className="container mx-auto h-full">
-        <div className="text-white flex flex-col items-center justify-between xl:flex-row h-full gap-12 text-center xl:text-left">
+        <div className="text-white grid grid-cols-2 lg:grid-cols-4 items-center justify-between gap-6 sm:gap-8 lg:gap-12 text-center">
           {statsData.map((item, index) => {
             return (
               <div className="w-full" key={index}>
-                <div className="text-5xl font-semibold">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-2">
                   {inView && (
                     <CountUp
                       start={0}
@@ -49,7 +49,7 @@ const Stats = () => {
                   )}
                   <span>{item.endCountText}</span>
                 </div>
-                <p>{item.text}</p>
+                <p className="text-xs sm:text-sm lg:text-base text-white/80">{item.text}</p>
               </div>
             );
           })}

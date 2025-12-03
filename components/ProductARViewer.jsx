@@ -67,14 +67,14 @@ const ProductARViewer = ({ isOpen, onClose, productName }) => {
         </button>
 
         {/* Instructions */}
-        <div className="absolute top-4 left-4 z-50 bg-black/70 text-white p-4 rounded-lg max-w-xs">
-          <h3 className="font-semibold mb-2">AR View Instructions</h3>
+        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 z-50 bg-black/70 text-white p-3 sm:p-4 rounded-lg max-w-[280px] sm:max-w-xs">
+          <h3 className="text-sm sm:text-base font-semibold mb-2">AR View Instructions</h3>
           {!isARSupported && !isMobile ? (
-            <p className="text-sm text-yellow-300">
+            <p className="text-xs sm:text-sm text-yellow-300">
               AR works best on mobile devices. Please use iOS Safari or Android Chrome for the best experience.
             </p>
           ) : (
-            <div className="text-sm space-y-1">
+            <div className="text-xs sm:text-sm space-y-1">
               <p>1. Click "View in AR" button below</p>
               <p>2. Allow camera access when prompted</p>
               <p>3. Point camera at a flat surface</p>
@@ -104,10 +104,10 @@ const ProductARViewer = ({ isOpen, onClose, productName }) => {
           >
             <div
               slot="ar-button"
-              className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-50"
+              className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-50"
             >
               <button
-                className="px-6 py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors uppercase tracking-wide"
+                className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-primary text-xs sm:text-sm font-semibold rounded-lg hover:bg-accent/90 transition-colors uppercase tracking-wide"
                 style={{ pointerEvents: "auto" }}
               >
                 View in AR

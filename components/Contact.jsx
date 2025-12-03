@@ -5,25 +5,25 @@ import { RiMailLine, RiPhoneLine, RiMapPinLine, RiTimeLine } from "react-icons/r
 
 const Contact = () => {
   return (
-    <section className="py-20 xl:py-32 bg-slate-50" id="contact">
+    <section className="py-12 sm:py-16 xl:py-32 bg-slate-50 px-4 sm:px-0" id="contact">
       <div className="container mx-auto">
         {/* Header text */}
-        <div className="text-center max-w-[540px] mx-auto mb-12 xl:mb-16">
+        <div className="text-center max-w-[540px] mx-auto mb-8 sm:mb-12 xl:mb-16">
           <Pretitle text="Contact Us" center />
-          <h2 className="h2 mb-3">Let&apos;s Build Something Great Together</h2>
-          <p className="text-sm xl:text-base text-secondary mx-auto">
+          <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold mb-3">Let&apos;s Build Something Great Together</h2>
+          <p className="text-sm sm:text-base xl:text-base text-secondary mx-auto">
             Share your project details, timeline, or questions and our team
             will get back to you with tailored solutions for your space.
           </p>
         </div>
 
         {/* Content */}
-        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-10 xl:gap-16">
+        <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] gap-6 sm:gap-8 xl:gap-16">
           {/* Form */}
-          <div className="bg-white shadow-custom rounded-xl p-6 md:p-8">
-            <h3 className="h3 mb-6">Tell Us About Your Project</h3>
-            <form className="space-y-5">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="bg-white shadow-custom rounded-xl p-5 sm:p-6 md:p-8">
+            <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold mb-4 sm:mb-6">Tell Us About Your Project</h3>
+            <form className="space-y-4 sm:space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-slate-700">
                     Full Name
@@ -46,23 +46,23 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-slate-700">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700">
                     Phone Number
                   </label>
                   <input
                     type="tel"
                     placeholder="+1 (555) 000-0000"
-                    className="h-11 px-3 border border-slate-200 rounded-md text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
+                    className="h-10 sm:h-11 px-3 border border-slate-200 rounded-md text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-slate-700">
+                  <label className="text-xs sm:text-sm font-medium text-slate-700">
                     Project Type
                   </label>
                   <select
-                    className="h-11 px-3 border border-slate-200 rounded-md text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white transition"
+                    className="h-10 sm:h-11 px-3 border border-slate-200 rounded-md text-sm outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary bg-white transition"
                     defaultValue=""
                   >
                     <option value="" disabled>

@@ -51,19 +51,19 @@ const faqItemsVariant = {
 
 const Faq = () => {
   return (
-    <section className="pt-16 xl:pt-32">
+    <section className="pt-12 sm:pt-16 xl:pt-32 px-4 sm:px-0">
       <div className="container mx-auto">
         {/* text */}
-        <div className="text-center max-w-[540px] mx-auto xl:mb-20">
+        <div className="text-center max-w-[540px] mx-auto mb-8 sm:mb-12 xl:mb-20">
           <Pretitle text="Faq" center />
-          <h2 className="h2 mb-3">Got Questions ? We've Got You Covered</h2>
-          <p className="mb-11 max-w-[480px] mx-auto">
+          <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold mb-3">Got Questions ? We've Got You Covered</h2>
+          <p className="mb-8 sm:mb-11 max-w-[480px] mx-auto text-sm sm:text-base px-4 sm:px-0">
             From project planning to final touches, we've answered the most
             common questions to help you make informed decisions{" "}
           </p>
         </div>
         {/* faq items */}
-        <ul className="w-full flex flex-col">
+        <ul className="w-full flex flex-col px-4 sm:px-0">
           {faqItemsData.map((item, index) => {
             return (
               <li key={index}>
