@@ -9,7 +9,6 @@ import {
   PiWrenchFill,
 } from "react-icons/pi";
 
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 import Image from "next/image";
 import Pretitle from "./Pretitle";
@@ -31,13 +30,13 @@ const serviceData = [
       "Interior Finish",
     ],
     thumbs: [
-      { 
+      {
         url: "/assets/img/services/thumb-1.jpg",
         alt: "Construction Services",
         width: 140,
         height: 100,
       },
-      { 
+      {
         url: "/assets/img/services/thumb-2.jpg",
         alt: "Construction Services",
         width: 140,
@@ -60,13 +59,13 @@ const serviceData = [
       "Carpentry",
     ],
     thumbs: [
-      { 
+      {
         url: "/assets/img/services/thumb-3.jpg",
         alt: "Renovation Services",
         width: 140,
         height: 100,
       },
-      { 
+      {
         url: "/assets/img/services/thumb-4.jpg",
         alt: "Renovation Services",
         width: 140,
@@ -89,13 +88,13 @@ const serviceData = [
       "Project Management",
     ],
     thumbs: [
-      { 
+      {
         url: "/assets/img/services/thumb-1.jpg",
         alt: "Consulting Services",
         width: 140,
         height: 100,
       },
-      { 
+      {
         url: "/assets/img/services/thumb-3.jpg",
         alt: "Consulting Services",
         width: 140,
@@ -118,13 +117,13 @@ const serviceData = [
       "Mold Remediation",
     ],
     thumbs: [
-      { 
+      {
         url: "/assets/img/services/thumb-5.jpg",
         alt: "Restoration Services",
         width: 140,
         height: 100,
       },
-      { 
+      {
         url: "/assets/img/services/thumb-6.jpg",
         alt: "Restoration Services",
         width: 140,
@@ -147,34 +146,6 @@ const Services = () => {
               Offering tailored construction solutions, from planning to
               completion, with a focus on quality and innovation.
             </p>
-          </div>
-
-          {/* Products quick access */}
-          <div className="mt-6 flex flex-col items-center gap-3 md:flex-row md:justify-center md:gap-4">
-            <p className="text-xs md:text-sm text-muted-foreground">
-              Want to explore our key product categories?
-            </p>
-            <select
-              className="h-11 px-3 rounded-md border border-slate-200 text-xs md:text-sm bg-white outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition w-full max-w-[260px]"
-              defaultValue=""
-              onChange={(e) => {
-                if (!e.target.value) return;
-                if (typeof window !== "undefined") {
-                  window.location.href = e.target.value;
-                }
-              }}
-            >
-              <option value="" disabled>
-                Select a product category
-              </option>
-              <option value="/products?category=tiles">Tiles</option>
-              <option value="/products?category=wooden-flooring">
-                Wooden Flooring
-              </option>
-              <option value="/products?category=vanities">Vanities</option>
-              <option value="/products?category=mirrors">Mirrors</option>
-              <option value="/products?category=faucets">Faucets</option>
-            </select>
           </div>
         </div>
 
@@ -214,9 +185,9 @@ const Services = () => {
             {/* Tabs Content  */}
             <div className="flex-1 bg-white shadow-custom min-h-[490px] xl:h-[490px] xl:flex-1 p-6 xl:p-[30px]">
               {serviceData.map((item) => (
-                <TabsContent 
-                  key={item.name} 
-                  value={item.name} 
+                <TabsContent
+                  key={item.name}
+                  value={item.name}
                   className="h-full mt-0"
                 >
                   <div className="flex flex-col lg:flex-row gap-6 xl:gap-10 h-full">
@@ -227,9 +198,9 @@ const Services = () => {
                           key={index}
                           className="relative w-[110px] h-[110px] xl:w-[150px] xl:h-[150px] rounded-md overflow-hidden"
                         >
-                          <Image 
-                            src={thumb.url} 
-                            fill 
+                          <Image
+                            src={thumb.url}
+                            fill
                             alt={thumb.alt || item.title}
                             className="object-cover"
                           />
@@ -239,11 +210,13 @@ const Services = () => {
 
                     {/* Text Content Section */}
                     <div className="flex-1 flex flex-col">
-                      <h3 className="h3 mb-4 xl:mb-6 capitalize">{item.title}</h3>
+                      <h3 className="h3 mb-4 xl:mb-6 capitalize">
+                        {item.title}
+                      </h3>
                       <p className="text-sm xl:text-base text-muted-foreground mb-6 xl:mb-8 leading-relaxed">
                         {item.description}
                       </p>
-                      
+
                       {/* Service List */}
                       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 xl:gap-4 mb-6 xl:mb-8">
                         {item.servicesList.map((service, index) => (

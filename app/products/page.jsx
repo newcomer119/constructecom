@@ -1,163 +1,172 @@
 import React from "react";
 import Pretitle from "@/components/Pretitle";
 import Button from "@/components/Button";
-
-const productCategories = [
-  {
-    id: "tiles",
-    name: "Tiles",
-    description:
-      "Durable, stylish tiles for floors and walls, perfect for bathrooms, kitchens, and living spaces.",
-    products: [
-      {
-        name: "Urban Stone Grey",
-        subtitle: "60x60 cm Porcelain Floor Tile",
-        badge: "Best Seller",
-      },
-      {
-        name: "Marble Luxe White",
-        subtitle: "30x60 cm Wall & Floor Tile",
-        badge: "Premium",
-      },
-    ],
-  },
-  {
-    id: "wooden-flooring",
-    name: "Wooden Flooring",
-    description:
-      "Warm, natural wooden flooring that adds character and comfort to any room.",
-    products: [
-      {
-        name: "Oak Natural Plank",
-        subtitle: "Engineered Wood, Matte Finish",
-        badge: "New",
-      },
-      {
-        name: "Walnut Deep Brown",
-        subtitle: "Laminate, High Durability",
-        badge: "Popular",
-      },
-    ],
-  },
-  {
-    id: "vanities",
-    name: "Vanities",
-    description:
-      "Modern vanities combining smart storage with elegant design for bathrooms of any size.",
-    products: [
-      {
-        name: "Siena Wall Vanity",
-        subtitle: "900 mm, Matte White with Oak",
-        badge: "Featured",
-      },
-      {
-        name: "Linea Compact",
-        subtitle: "600 mm, Ideal for small bathrooms",
-        badge: "Space Saver",
-      },
-    ],
-  },
-  {
-    id: "mirrors",
-    name: "Mirrors",
-    description:
-      "LED and framed mirrors that enhance light and add a refined touch to your space.",
-    products: [
-      {
-        name: "Aura LED Mirror",
-        subtitle: "Backlit, Anti-fog, 800 mm",
-        badge: "LED",
-      },
-      {
-        name: "Frame Classic",
-        subtitle: "Bronze metal frame, 700x900 mm",
-        badge: "Classic",
-      },
-    ],
-  },
-  {
-    id: "faucets",
-    name: "Faucets",
-    description:
-      "Precision-engineered faucets with smooth flow, long life, and a premium finish.",
-    products: [
-      {
-        name: "Arc Mono Basin Mixer",
-        subtitle: "Chrome, Single Lever",
-        badge: "Best Seller",
-      },
-      {
-        name: "Rainfall Shower Set",
-        subtitle: "Wall mounted, Brushed Nickel",
-        badge: "Premium",
-      },
-    ],
-  },
-];
+import Product3DViewer from "@/components/Product3DViewer";
 
 const ProductsPage = () => {
   return (
     <main className="min-h-screen bg-slate-50 pb-20">
+      {/* Hero / intro */}
       <section className="pt-24 xl:pt-28">
         <div className="container mx-auto">
           <div className="max-w-[620px] mx-auto text-center mb-12 xl:mb-16">
             <Pretitle text="Products" center />
-            <h1 className="h2 mb-3">Explore Our Key Categories</h1>
+            <h1 className="h2 mb-3">Vanities &amp; Sofa Collection</h1>
             <p className="text-sm xl:text-base text-secondary">
-              Browse our core product ranges that bring your spaces to life.{" "}
-              From tiles and wooden flooring to vanities, mirrors, and faucets,
-              each category is curated for design and performance.
+              Explore our first interactive products. Start with a signature
+              vanity and a modern sofa, both ready to view in 3D on this page.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-10">
-            {productCategories.map((category) => (
-              <div
-                key={category.id}
-                id={category.id}
-                className="bg-white shadow-custom rounded-xl p-6 md:p-7 flex flex-col gap-4"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h2 className="h3 mb-1">{category.name}</h2>
-                    <p className="text-sm text-secondary max-w-[420px]">
-                      {category.description}
-                    </p>
-                  </div>
-                  <span className="hidden md:inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold uppercase tracking-[0.18em]">
-                    Key Category
-                  </span>
+          {/* Product list */}
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-10 mb-16">
+            {/* Vanity card */}
+            <div className="bg-white shadow-custom rounded-xl p-6 md:p-7 flex flex-col gap-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="h3 mb-1">Siena Wall Vanity</h2>
+                  <p className="text-sm text-secondary max-w-[420px]">
+                    A sleek wall-mounted vanity designed for modern bathrooms,
+                    pairing generous storage with a clean, minimal silhouette.
+                  </p>
                 </div>
-
-                <div className="grid grid-cols-1 gap-3 mt-2">
-                  {category.products.map((product) => (
-                    <div
-                      key={product.name}
-                      className="border border-slate-100 rounded-lg px-4 py-3 flex items-start justify-between gap-4"
-                    >
-                      <div>
-                        <p className="text-sm font-semibold text-slate-900">
-                          {product.name}
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          {product.subtitle}
-                        </p>
-                      </div>
-                      {product.badge && (
-                        <span className="px-2.5 py-1 rounded-full bg-slate-100 text-[11px] font-medium text-slate-700">
-                          {product.badge}
-                        </span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="pt-2">
-                  <Button text="View in Room (Coming Soon)" />
-                </div>
+                <span className="hidden md:inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold uppercase tracking-[0.18em]">
+                  Vanity
+                </span>
               </div>
-            ))}
+
+              <ul className="text-xs text-slate-600 space-y-1">
+                <li>• 900 mm width, ideal for medium-size bathrooms</li>
+                <li>• Matte white finish with warm wood accents</li>
+                <li>• Soft-close drawers and integrated basin</li>
+              </ul>
+
+              <div className="pt-2">
+                <a href="#vanity-detail">
+                  <Button text="View Product" />
+                </a>
+              </div>
+            </div>
+
+            {/* Sofa card */}
+            <div className="bg-white shadow-custom rounded-xl p-6 md:p-7 flex flex-col gap-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="h3 mb-1">Lounge Sofa</h2>
+                  <p className="text-sm text-secondary max-w-[420px]">
+                    A contemporary sofa with generous seating depth, perfect for
+                    living rooms that balance comfort and style.
+                  </p>
+                </div>
+                <span className="hidden md:inline-block px-3 py-1 rounded-full bg-primary/5 text-primary text-xs font-semibold uppercase tracking-[0.18em]">
+                  Sofa
+                </span>
+              </div>
+
+              <ul className="text-xs text-slate-600 space-y-1">
+                <li>• Low-profile armrests and deep cushions</li>
+                <li>• Neutral upholstery to suit most interiors</li>
+                <li>• Ideal for 3–4 person seating areas</li>
+              </ul>
+
+              <div className="pt-2">
+                <a href="#sofa-detail">
+                  <Button text="View Product" />
+                </a>
+              </div>
+            </div>
           </div>
+
+          {/* Vanity detail with 3D viewer */}
+          <section
+            id="vanity-detail"
+            className="bg-white shadow-custom rounded-2xl p-6 md:p-8 xl:p-10 mb-10"
+          >
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] gap-8 xl:gap-10 items-start">
+              <div>
+                <Pretitle text="Vanity" center={false} />
+                <h2 className="h2 mb-4">Siena Wall Vanity</h2>
+                <p className="text-sm xl:text-base text-secondary mb-4">
+                  The Siena Wall Vanity is designed for clean, clutter-free
+                  bathrooms. Wall mounting keeps the floor visible, making small
+                  spaces feel bigger while still offering generous storage.
+                </p>
+                <p className="text-sm xl:text-base text-secondary mb-4">
+                  Pair it with your preferred faucet and mirror to complete the
+                  look. The 3D preview lets you explore proportions and
+                  detailing before final selection.
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-xs text-slate-700 mb-6">
+                  <div>
+                    <p className="font-semibold mb-1">Dimensions</p>
+                    <p>900 × 460 × 520 mm</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Finishes</p>
+                    <p>Matte white, light oak</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Mounting</p>
+                    <p>Wall-mounted</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Best for</p>
+                    <p>Modern &amp; minimal bathrooms</p>
+                  </div>
+                </div>
+                <Button text="Get a Quote for This Vanity" />
+              </div>
+
+              <div className="h-[360px] md:h-[420px] xl:h-[460px]">
+                <Product3DViewer />
+              </div>
+            </div>
+          </section>
+
+          {/* Sofa detail with 3D viewer (reusing same model for now) */}
+          <section
+            id="sofa-detail"
+            className="bg-white shadow-custom rounded-2xl p-6 md:p-8 xl:p-10"
+          >
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] gap-8 xl:gap-10 items-start">
+              <div>
+                <Pretitle text="Sofa" center={false} />
+                <h2 className="h2 mb-4">Lounge Sofa</h2>
+                <p className="text-sm xl:text-base text-secondary mb-4">
+                  The Lounge Sofa offers relaxed, deep seating with a simple,
+                  architectural silhouette. It works equally well in compact
+                  apartments and spacious living rooms.
+                </p>
+                <p className="text-sm xl:text-base text-secondary mb-4">
+                  Use the 3D preview to rotate around the piece and understand
+                  its scale in relation to your room layout.
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-xs text-slate-700 mb-6">
+                  <div>
+                    <p className="font-semibold mb-1">Dimensions</p>
+                    <p>2200 × 900 × 780 mm</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Upholstery</p>
+                    <p>Textured fabric, warm grey</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Seating</p>
+                    <p>Comfortable for 3–4 people</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold mb-1">Best for</p>
+                    <p>Living rooms &amp; lounges</p>
+                  </div>
+                </div>
+                <Button text="Get a Quote for This Sofa" />
+              </div>
+
+              <div className="h-[360px] md:h-[420px] xl:h-[460px]">
+                <Product3DViewer />
+              </div>
+            </div>
+          </section>
         </div>
       </section>
     </main>
