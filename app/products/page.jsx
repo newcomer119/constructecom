@@ -8,10 +8,10 @@ import ProductARViewer from "@/components/ProductARViewer";
 
 const ProductsPage = () => {
   const [arViewOpen, setArViewOpen] = useState(false);
-  const [currentProduct, setCurrentProduct] = useState("");
+  const [currentProduct, setCurrentProduct] = useState(null);
 
   const handleViewInAR = (productName) => {
-    setCurrentProduct(productName);
+    setCurrentProduct({ name: productName });
     setArViewOpen(true);
   };
 
@@ -128,9 +128,9 @@ const ProductsPage = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={() => handleViewInAR("Siena Wall Vanity")}
-                    className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors uppercase tracking-wide text-xs sm:text-sm w-full sm:w-auto"
+                    className="px-4 sm:px-6 py-2 sm:py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors uppercase tracking-wide text-xs sm:text-sm w-full sm:w-auto"
                   >
-                    View in My Room (AR)
+                    View in AR
                   </button>
                   <div className="w-full sm:w-auto">
                     <Button text="Get a Quote" />
@@ -183,9 +183,9 @@ const ProductsPage = () => {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={() => handleViewInAR("Lounge Sofa")}
-                    className="px-4 sm:px-6 py-2 sm:py-3 bg-accent text-primary font-semibold rounded-lg hover:bg-accent/90 transition-colors uppercase tracking-wide text-xs sm:text-sm w-full sm:w-auto"
+                    className="px-4 sm:px-6 py-2 sm:py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors uppercase tracking-wide text-xs sm:text-sm w-full sm:w-auto"
                   >
-                    View in My Room (AR)
+                    View in AR
                   </button>
                   <div className="w-full sm:w-auto">
                     <Button text="Get a Quote" />
@@ -205,12 +205,14 @@ const ProductsPage = () => {
       <ProductARViewer
         isOpen={arViewOpen}
         onClose={() => setArViewOpen(false)}
-        productName={currentProduct}
+        productName={currentProduct?.name || ""}
       />
     </main>
   );
 };
 
 export default ProductsPage;
+
+
 
 

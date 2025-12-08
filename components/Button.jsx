@@ -1,9 +1,12 @@
 import React from "react";
 import { RiArrowRightLine } from "react-icons/ri";
 
-const Button = ({ text }) => {
+const Button = ({ text, onClick, className = "" }) => {
   return (
-    <button className="w-[210px] h-[54px] py-[5px] pl-[10px] pr-[5px] flex items-center justify-between min-w-[200px] group bg-accent">
+    <button
+      onClick={onClick}
+      className={`w-[210px] h-[54px] py-[5px] pl-[10px] pr-[5px] flex items-center justify-between min-w-[200px] group bg-accent ${className}`}
+    >
       <div className="flex-1 text-center tracking-[1.2px] font-primary font-bold text-primary text-sm uppercase">
         {text}
       </div>
