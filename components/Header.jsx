@@ -11,7 +11,7 @@ const links = [
   { name: "Home", path: "home", type: "scroll" },
   { name: "About", path: "about", type: "scroll" },
   { name: "Services", path: "services", type: "scroll" },
-  { name: "Products", path: "/products", type: "route" },
+  { name: "PRODUCTS", path: "/products", type: "route" },
   { name: "Projects", path: "projects", type: "scroll" },
   { name: "Contact", path: "contact", type: "scroll" },
 ];
